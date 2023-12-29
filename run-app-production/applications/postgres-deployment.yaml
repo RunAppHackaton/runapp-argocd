@@ -12,6 +12,7 @@ spec:
   template:
     metadata:
       name: postgres-deployment
+      namespace: default
       labels:
         app: postgres-deployment
     spec:
@@ -30,4 +31,3 @@ spec:
             - containerPort: 5432
 
       restartPolicy: Always
-      
