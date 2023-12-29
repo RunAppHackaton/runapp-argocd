@@ -29,5 +29,15 @@ spec:
               value: postgres
           ports:
             - containerPort: 5432
+          livenessProbe:
+            tcpSocket:
+              port: 5432
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: 5432
+              initialDelaySeconds: 30
+              periodSeconds: 10
 
       restartPolicy: Always
